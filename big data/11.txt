@@ -1,0 +1,40 @@
+queue = function(n,arate,srate){
+  w <- 0
+  for (i in 1:n){
+    w <- max(0, w+rexp(1,srate)-rexp(1,arate))}
+  w
+}
+queue(50,2,2)
+
+queueRep1 = function(nreps,n,arate,srate){
+  w <- rep(NA,nreps)
+  for (j in 1:nreps){
+    w[j] <- queue(n,arate,srate)
+  }
+  w
+}
+queueRep1(10,50,2,2)
+
+
+queueRep2 = function(nreps,n,arate,srate){
+  sapply(rep(n,nreps),queue,arate,srate)
+}
+queueRep2(10,50,2,2)
+
+
+
+
+queueRep3 = function(nreps,n,arate,srate){
+w <- rep(0,nreps)
+s = matrix(rexp(n*nreps,srate), ncol = nreps)
+a = matrix(rexp(n*nreps,arate), ncol = nreps)
+for(i in 1:n){
+  w <- pmax(0,w+s[i,]-a[i,]) }
+w
+}
+queueRep3(10,50,2,2)
+
+
+system.time(queueRep1(10,50,2,2))
+system.time(queueRep2(10,50,2,2))
+system.time(queueRep3(10,50,2,2))

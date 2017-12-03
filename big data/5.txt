@@ -1,0 +1,13 @@
+x=c(rep("Control",3),rep("Ear Removal",4),rep("Fake Ear Removal",4))
+xfact=factor(x)
+print(xfact)
+nlevels(xfact)
+xtable=data.frame(xfact)
+print(xtable)
+
+
+x=c(rep("a",25),rep("b",15),rep("c",58))
+print(x)
+length(x)
+xtable=data.frame(x)
+print(table(x))

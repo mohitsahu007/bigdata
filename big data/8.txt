@@ -1,0 +1,49 @@
+marks <- runif(5,15,30)
+marks
+name <- c(letters[1:5])
+name
+usn=paste("INT",1:5,sep="")
+usn
+datax = data.frame(usn,name,marks)
+datax
+
+age = runif(5,15,30)
+age
+datax = cbind(datax,age)
+datax
+
+subset(datax,age<20 & marks>25)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+usn=paste("1NT14CS",1:10,Sep=" ")usn
+name=c(LETTERS[1:10])
+marks=(runif(10,1,20))
+
+kk = c(letters[1:5])
+marks = c(22:26)
+usn = paste("1NT14CS",100:104,sep="")
+
+dt = data.frame(usn,kk,marks)
+dt
+
+
+
+age=ceiling(runif(10,16,21))
+
+dt=cbind(dt,age)
+print(dt)
+
+print(subset(dt,age<20 & marks>7))

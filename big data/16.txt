@@ -1,0 +1,15 @@
+localData = airquality
+head(localData)
+localData
+
+lapply(localData,class)
+sapply(localData,class)
+
+is.na(localData)
+
+localData$Ozone[is.na(localData$Ozone)]=mean(airquality$Ozone,na.rm = TRUE)
+
+localData
+
+x = na.omit(localData)
+x

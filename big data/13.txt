@@ -1,0 +1,30 @@
+empid=vector(mode="numeric",length=3)
+empname=vector(mode="character",length=3)
+empjoin=vector(mode="character",length=3)
+empcode=vector(mode="numeric",length=3)
+empdept=vector(mode="character",length=3)
+emprole=vector(mode="character",length=3)
+
+for(i in 1:3){
+  empid[i]=as.numeric(readline("ID:"))
+  empname[i]=readline("NAME:")
+  empjoin[i]=readline("DOJ:")
+  empcode[i]=as.numeric(readline("CODE:"))
+  empdept[i]=readline("DEPT:")
+  emprole[i]=readline("ROLE:")
+}
+
+data = data.frame(empid,empname,empjoin,empcode,empdept,emprole)
+data
+write.csv(data,file="data.csv")
+write.csv2(data,file="data1.csv")
+
+Mydata <- read.csv(file="C:/Users/Wolf/Documents/data.csv",header = TRUE,sep=",")
+Mydata
+
+x <- data.frame(101,"fuck","chu",200,"po","lol")
+x
+write.table(x,file="C:/Users/Wolf/Documents/data.csv",append = TRUE,col.names = FALSE,row.names = TRUE,sep=",")
+
+Mydatax <- read.csv(file="C:/Users/Wolf/Documents/data.csv",header = TRUE,sep=",")
+Mydatax

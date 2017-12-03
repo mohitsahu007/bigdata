@@ -1,0 +1,27 @@
+tsEwma <- function( tsDat, m0=0, delta=0.7)
+{
+  n <- length(tsDat)
+  mVec <- rep(NA,n+1)
+  mVec[1] <- m0
+  for(j in 2:(n+1)){
+    mVec[j] <- (1-delta)*tsDat[j-1] + delta*mVec[j-1]
+  }
+  ts(mVec[-1], start=start(tsDat), frequency=frequency(tsDat))
+}
+tmp <- ts(1:10,start=c(1960,3),frequency = 12)
+tsEwma(tmp)
+
+
+myListFn <- function(n){
+  xVec <- rnorm(n)
+  xBar <- mean(xVec)
+  print(xBar)
+  yVec <- sign(xBar)*rexp(n, rate=abs(1/xBar))
+  count <- sum(abs(yVec) > abs(xVec))
+  list(xVec=xVec, yVec=yVec, count=count)
+}
+
+lapply(rep(10,4),myListFn)
+
+
+sapply(rep(10,4),myListFn)

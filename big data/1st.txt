@@ -1,0 +1,14 @@
+x=as.integer(4)
+y=as.integer(5)
+z=x+y
+print(z)
+print(class(z))
+
+
+
+x=as.integer(2)
+y=as.integer(4)
+z=x/y
+print(z)
+print(class(z))
+

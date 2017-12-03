@@ -1,0 +1,6 @@
+x=seq(1,10,0.1)
+print(x)
+
+y=seq(100,50,-2)
+print(y)
+

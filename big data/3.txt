@@ -1,0 +1,5 @@
+temp = c(4,6,3)
+rex = rep(temp,10)
+rex
+
+paste("fn",1:30,sep="")

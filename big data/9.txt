@@ -1,0 +1,33 @@
+xVec = seq(1,4,1)
+yVec = seq(4,1,-1)
+
+fun = function(x,y){
+  temp = outer(y,x,"<")
+  print(temp)
+  a=colSums(temp)
+  a
+}
+fun(xVec,yVec)
+
+fun2 = function(x,y){
+  temp2 = sapply(y,x,FUN="<")
+  print(temp2)
+  a = colSums(temp2)
+  a
+}
+fun2(xVec,yVec)
+
+fun3 = function(x,y){
+  temp3 = vapply(y,x,FUN="<",FUN.VALUE = seq(along=x)) 
+  print(temp3)
+  a = colSums(temp3)
+  a
+}
+fun3(xVec,yVec)
+
+x = rnorm(1000)
+y = rnorm(1000)
+
+system.time(fun(x,y))
+system.time(fun2(x,y))
+system.time(fun3(x,y))

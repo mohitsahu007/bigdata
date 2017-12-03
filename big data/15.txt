@@ -1,0 +1,20 @@
+
+
+library(readr)
+
+sales <- read.csv(file="C:/Users/Wolf/Desktop/R_Lab-master/sales.csv",header=TRUE,sep=",")
+head(sales)
+view(sales)
+sales
+
+ts1 = ts(data=sales,frequency = 12,start=c(1992,1))
+ts1
+
+plot(ts1,ylim=c(0,40000))
+
+require(forecast)
+gghistogram(ts1,add.normal = TRUE,add.kde = TRUE)
+
+
+series_deco <- decompose(ts1,type="multiplicative")
+plot(series_deco)

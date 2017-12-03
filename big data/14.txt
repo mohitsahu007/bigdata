@@ -1,0 +1,31 @@
+data()
+
+nrow(mtcars)
+ncol(mtcars)
+
+d <-data.frame(mtcars[9])
+nrow(d)
+c0=0
+c1=0
+
+for(i in 1:nrow(d)){
+if(d[i,]==0){
+  c0=c0+1}
+  else{
+    c1=c1+1}
+}
+c0
+c1
+
+plot(mtcars$wt,mtcars$hp,col="red",pch=3,bty="l",xlab="Car Weights in lbs",ylab="HorsePoweR")
+
+sapply(mtcars,class)
+
+attach(mtcars)
+newmtc = data.frame(mpg,as.integer(cyl),disp,hp,drat,wt,qsec,as.integer(vs),as.integer(am))
+newmtc
+
+sapply(newmtc,class)
+
+mtcars
+mtcars[, 2] <= 5
